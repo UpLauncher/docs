@@ -9,10 +9,21 @@ export default defineConfig({
         src: "./src/assets/logo.png",
       },
       favicon: "./src/assets/logo.png",
+      social: {
+        "twitter": "https://twitter.com/raidesuuu",
+        "github": "https://github.com/raidesuuu",
+        "discord": "https://discord.com/raic.tech",
+        "blueSky": "https://bsky.app/raic.tech",
+        "youtube": "https://youtube.com/@_rai_ch",
+        "x.com": "https://x.com/raidesuuu"
+      },
       sidebar: [
         {
           label: "ようこそ",
-          link: "/"
+          translations: {
+            "en": "Welcome"
+          },
+          link: "/",
         },
         {
           label: "Rales",
@@ -32,29 +43,37 @@ export default defineConfig({
                   label: "Ralesに移行する",
                   link: "/rales/getting-started/migration",
                 },
-              ]
+              ],
             },
             {
               label: "サーバーの管理",
               items: [
                 {
                   label: "詳細なセットアップ",
-                  link: "/rales/advanced-setup"
+                  link: "/rales/advanced-setup",
                 },
                 {
                   label: "アップデート",
-                  link: "/rales/updating"
-                }
-              ]
-            }
+                  link: "/rales/updating",
+                },
+              ],
+            },
           ],
         },
+        {
+          label: "AblityDyno",
+          link: "https://ablitydyno.raic.tech"
+        }
       ],
       locales: {
         root: {
           label: "日本語",
           lang: "ja",
         },
+        en: {
+          label: "English",
+          lang: "en"
+        }
       },
     }),
   ],
