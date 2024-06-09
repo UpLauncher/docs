@@ -1,15 +1,15 @@
 ---
-title: 開始する
-description: このページでは、Discord.jsk を Discord.js にインストールする方法を説明します。
+title: Getting Started
+description: This page explains how to install Discord.jsk into Discord.js.
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-このページでは、Discord.jsk を Discord.js にインストールする方法を説明します。
+This page explains how to install Discord.jsk into Discord.js.
 
-## クイックスタート
+## Quick Start
 
-### discord.jsk のパッケージをインストールする
+### Install the discord.jsk package
 
 <Tabs>
   <TabItem label="npm">
@@ -29,9 +29,9 @@ npm install @uplc/discord.jsk
   </TabItem>
 </Tabs>
 
-### discord.jsk を discord.js に追加する
+### Add discord.jsk to discord.js
 
-これは、サンプルのコードです。このコードは変更する必要があります。**Discord.jsk の使用には Message Content Intent が必要です。Discord Developer Portal で Message Content Intent を有効にしてから discord.jsk を使用してください。**
+Here is a sample code. This code needs to be modified. **Using Discord.jsk requires Message Content Intent. Enable Message Content Intent in the Discord Developer Portal before using discord.jsk.**
 
 ```js
 // https://discordjs.guide/creating-your-bot/main-file.html
@@ -63,7 +63,7 @@ let jsk = {};
 client.once(Events.ClientReady, (readyClient) => {
   // init discord.jsk
   jsk = new djsk(readyClient, {
-    encoding: "UTF-8" /* 日本語環境ではShift-JISを推奨 */,
+    encoding: "UTF-8" /* Shift-JIS is recommended for Japanese environments */,
     useableUserId: ["0", "1"] /* Users who can use the bot */,
   });
 
@@ -75,18 +75,19 @@ client.on(Events.MessageCreate, (message) => jsk.onMessageCreated(message));
 client.login(token);
 ```
 
-### BOT を使えるかテストする
+### Test if the BOT is working
 
-BOT を起動し、`.jsk js message.reply("hello world")`と送信してみましょう！
+Start the BOT and try sending ``.jsk js message.reply("hello world")``!
+
 :::tip
-メッセージを送信しても何も起きない場合は、`userableUserId`にあなたのユーザー ID が記入されていない可能性があります。
+If nothing happens when you send the message, your user ID may not be included in ``useableUserId``.
 
-ユーザー ID の取得方法は、[こちら](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID)をご覧ください。
+For information on how to get your user ID, please see [here](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID).
 :::
 
-## discord.jsk を更新する
+## Update discord.jsk
 
-Discord.jsk を更新するのは、とても簡単です。次のコマンドを実行するだけです。
+Updating Discord.jsk is very simple. Just run the following command:
 
 <Tabs>
   <TabItem label="npm">
@@ -106,9 +107,9 @@ Discord.jsk を更新するのは、とても簡単です。次のコマンド�
   </TabItem>
 </Tabs>
 
-### 新しいインストール方法(プレビュー)
+## New Installation Method (Preview)
 
-次のコードは、ステップ 2.の新しいインストール方法です。この方法はプレビューであるため、問題が発生する可能性があります。
+The following code is the new installation method from Step 2. This method is in preview, so there may be issues.
 
 ```js
 // https://discordjs.guide/creating-your-bot/main-file.html
@@ -130,13 +131,14 @@ const client = new djskClient({
     GatewayIntentBits.GuildMessageReactions,
   ],
 });
+
 // When the client is ready, run this code (only once).
 // The distinction between `client: Client<boolean>` and `readyClient: Client<true>` is important for TypeScript developers.
 // It makes some properties non-nullable.
 client.once(Events.ClientReady, (readyClient) => {
   // init discord.jsk
   client.loadDjsk({
-    encoding: "UTF-8" /* 日本語環境ではShift-JISを推奨 */,
+    encoding: "UTF-8" /* Shift-JIS is recommended for Japanese environments */,
     useableUserId: ["0", "1"] /* Users who can use the bot */,
   });
 

@@ -30,31 +30,52 @@ export default defineConfig({
           items: [
             {
               label: "開始する",
+              translations: {
+                "en": "Getting Started"
+              },
               items: [
                 {
                   label: "開始する",
                   link: "/rales/getting-started/getting-started",
+                  translations: {
+                    "en": "Getting Started"
+                  },
                 },
                 {
                   label: "次のステップ",
                   link: "/rales/getting-started/next-step",
+                  translations: {
+                    "en": "Next Step"
+                  },
                 },
                 {
                   label: "Ralesに移行する",
                   link: "/rales/getting-started/migration",
+                  translations: {
+                    "en": "Migration"
+                  },
                 },
               ],
             },
             {
               label: "サーバーの管理",
+              translations: {
+                "en": "Server Management"
+              },
               items: [
                 {
                   label: "詳細なセットアップ",
                   link: "/rales/advanced-setup",
+                  translations: {
+                    "en": "Advanced Setup"
+                  },
                 },
                 {
                   label: "アップデート",
                   link: "/rales/updating",
+                  translations: {
+                    "en": "Updating"
+                  },
                 },
               ],
             },
@@ -63,6 +84,18 @@ export default defineConfig({
         {
           label: "AblityDyno",
           link: "https://ablitydyno.raic.tech"
+        },
+        {
+          label: "Discord.jsk",
+          items: [
+            {
+              label: "開始する",
+              translations: {
+                "en": "Getting Started"
+              },
+              link: "/jsk/getting-started"
+            }
+          ]
         }
       ],
       locales: {
