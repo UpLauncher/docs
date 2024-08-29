@@ -10,12 +10,12 @@ export default defineConfig({
       },
       favicon: "./src/assets/logo.png",
       social: {
-        "twitter": "https://twitter.com/raidesuuu",
+        "twitter": "https://twitter.com/raic_dev",
         "github": "https://github.com/raidesuuu",
         "discord": "https://discord.com/raic.tech",
         "blueSky": "https://bsky.app/raic.tech",
         "youtube": "https://youtube.com/@_rai_ch",
-        "x.com": "https://x.com/raidesuuu"
+        "x.com": "https://x.com/raic_dev"
       },
       sidebar: [
         {
@@ -26,36 +26,44 @@ export default defineConfig({
           link: "/",
         },
         {
+          label: "Minecraftサーバー",
+          items: [
+            {
+              label: "開始する",
+              link: "/minecraft/getting-started/",
+              translations: {
+                "en": "Getting Started"
+              },
+            },
+            {
+              label: "もち米鯖へ参加",
+              link: "/minecraft/getting-started/mochi",
+            },
+          ]
+        },
+        {
           label: "Rales",
           items: [
             {
               label: "開始する",
+              link: "/rales/getting-started/getting-started",
               translations: {
                 "en": "Getting Started"
               },
-              items: [
-                {
-                  label: "開始する",
-                  link: "/rales/getting-started/getting-started",
-                  translations: {
-                    "en": "Getting Started"
-                  },
-                },
-                {
-                  label: "次のステップ",
-                  link: "/rales/getting-started/next-step",
-                  translations: {
-                    "en": "Next Step"
-                  },
-                },
-                {
-                  label: "Ralesに移行する",
-                  link: "/rales/getting-started/migration",
-                  translations: {
-                    "en": "Migration"
-                  },
-                },
-              ],
+            },
+            {
+              label: "次のステップ",
+              link: "/rales/getting-started/next-step",
+              translations: {
+                "en": "Next Step"
+              },
+            },
+            {
+              label: "Ralesに移行する",
+              link: "/rales/getting-started/migration",
+              translations: {
+                "en": "Migration"
+              },
             },
             {
               label: "サーバーの管理",
